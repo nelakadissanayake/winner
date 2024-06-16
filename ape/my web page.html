@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="#">
+        <title> Nelaka Dissanayake</title>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        rel="stylesheet"/>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'poppins',sans-serif;
+            }
+            html, body{
+                height: 100%;
+                width: 100%;
+            }
+            body{
+                color: #fff;
+                background-color: #201016;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+                text-decoration: none;
+
+            }
+
+            ul{
+                list-style: none;
+            }
+
+            .bg{
+                position: absolute;
+                left: 0;
+                height: 100%;
+                width: 0%;
+                background: #201016;
+                z-index: -1;
+            }
+
+            i{
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            .navbar{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 80px;
+                padding: 0 50px;
+            }
+            .navbar .title {
+                cursor: pointer;
+                margin-right: 100px;
+                font-size: 22px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-weight: 700;
+            }
+
+            .navbar .categories {
+                margin-right: auto;
+            }
+
+            .navbar .categories ul li{
+                display: inline-block;
+            }
+
+            .navbar .categories ul li a{
+                text-decoration: none;
+                display: inline-block;
+                padding: 0 30px;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: 400;
+                color: #a6a6a6;
+
+
+            }
+
+            .navbar .categories ul li a :hover,
+            .navbar .categories ul li a.active{
+                color: #fff;
+                transition: 0.5s;
+            }
+
+            .menu{
+                margin-right:  100px; 
+                
+            }
+
+            .media{
+                position: absolute;
+                top: 50%;
+                right: -120px;
+                transform: rotate(90deg);
+
+
+            }
+
+            .media ul li{
+                display: inline-block;
+                cursor: pointer;
+                padding: 0 20px;
+                font-size: 12px;
+                letter-spacing: 1px;
+                font-weight: 500;
+            }
+
+            .img-wrapper1{
+                position: absolute;
+                top: 120px;
+                left: 200px;
+            }
+
+            .img-wrapper1 .img1{
+                background:url(s.jpg) no-repeat;
+                background-position: 50%;
+                background-size: cover;
+                height: 400px;
+                width: 320px;
+                opacity: 0;
+                animation: image-appear 0.0001s linear forwards;
+                animation-delay: 2.4s;
+
+            }
+
+            .img-wrapper2{
+                position: absolute;
+                top: 0px;
+                left: 650px;
+            }
+
+            .img-wrapper2 .img2{
+                background:url(k.jpg) no-repeat;
+                background-position: 50%;
+                background-size: cover;
+                height: 100vh;
+                width: 500px;
+                opacity: 0;
+                animation: image-appear 0.0001s linear forwards;
+                animation-delay: 2.6s;
+
+            }
+            @keyframes image-appear{
+                0%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity:1 ;
+                }
+
+            }
+
+            .text{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                white-space: nowrap;
+                width: 1000px;
+            }
+
+            .text h1{
+                font-size: 100px;
+                font-weight: 150;
+                letter-spacing: 5px;
+                position: relative;
+                overflow: hidden;
+                height: 150px;
+                width: 100%;
+                margin-bottom: 40px;
+
+            }
+
+            .text h1 .hidetext{
+                position: absolute;
+            }
+
+            .text p{
+                font-size: 40px;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-weight: lighter;
+                position: relative;
+                overflow: hidden;
+                height: 50px;
+                width: 100%;
+            }
+
+            .text p .hidetext{
+                position: absolute;
+
+            }
+
+            .desc{
+                position: absolute;
+                left: 200px;
+                bottom: 30px;
+                display: flex;
+            }
+
+            .desc ul{
+                margin-right: 50px;
+
+            }
+
+            .desc ul li{
+                font-size: 10px;
+                letter-spacing: 1px;
+                font-weight: 500;
+                border-bottom: 1px solid #fff;
+                margin-bottom: 10px;
+
+            }
+
+            .desc p{
+                width: 250px;
+                font-size: 10px;
+                line-height: 2;
+                font-weight: 300;
+
+            }
+
+            .scrolldown{
+                font-size: 10px;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                position: absolute;
+                bottom: 110px;
+                left: -60px;
+                transform: rotate(-90deg);
+
+            }
+
+            .scrolldown::before{
+                content: "";
+                border: 1px solid #fff;
+                width: 100px;
+                margin: 0 20px 0 0 ;
+                transform: translate(-3px);
+                opacity: 0.5;
+                display: inline-block;
+            }
+
+
+            .bottomnav{
+                position: absolute;
+                bottom: 25px;
+                right: 80px;
+
+            }
+
+            .bottomnav .nav{
+                display: flex;
+
+            }
+
+            .bottomnav .next{
+                font-size: 10px;
+                letter-spacing: 8px;
+                font-weight: 500;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+
+
+            }
+
+            .bottomnav .next::after{
+                content: "";
+                display: inline-block;
+                border: 1px solid #fff;
+                width: 150px;
+                margin: 0 0 0 20px;
+                transform:translateY(-3px);
+            }
+
+            .bottomnav ul{
+                background: rgb(74,55,55);
+                color: #000;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .bottomnav i{
+                color: #fff;
+
+
+            }
+
+            .bottomnav ul li{
+                padding: 20px 10px;
+                font-size: 25px;
+
+            }
+
+            .bottomimg{
+                background: url(w.jpg) no-repeat;
+                background-position: 50%;
+                background-size: cover;
+                height: 220px;
+                width: 280px;
+            }
+
+            .block{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                background: rgb(74,55,55);
+                animation:block-appear 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+                animation-delay: 1.8s;
+            }
+
+            .img-wrapper2 .block{
+                animation-delay: 2s;
+            }
+
+            @keyframes block-appear{
+                0%{
+                    left: 0;
+                    width: 0%;
+                }
+                0%{
+                    left: 0;
+                    width:100%;
+
+                }
+                100%{
+                    left: 100;
+                    width: 0%;
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="bg"></div>
+        
+
+            <nav class="navbar">
+
+                <div class="title">Nelaka</div>
+                <div class="categories">
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu">
+                    <i class="ri-menu-line"></i>
+
+                </div>
+                <div class="search">
+                    <i class="ri-search-line"></i>
+                    
+                </div>
+
+            </nav>
+
+            <div class="media">
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+
+            <div class="img-wrapper1">
+                <div class="img1"></div>
+                <div class="block"></div>
+            </div>
+
+            <div class="img-wrapper2">
+                <div class="img2"></div>
+                <div class="block"></div>
+            </div>
+
+            <div class="text">
+                <h1><span class="hidetext">Nelaka Dissanayake</span></h1>
+                <p><span class="hidetext">Grace in Every Glance</span></p>
+            </div>
+
+            <div class="desc">
+                <ul>
+                    <li>Volume 01</li>
+                    <li>Volume 02</li>
+                </ul>
+                <p>Radiate confidence like never before with Nelaka Dissanayake. Where sophistication meets empowerment. Own your Style, Own the moment.</p>
+            </div>
+
+            <div class="scrolldown">
+                scroll down
+            </div>
+
+            <div class="bottomnav">
+                <div class="next">up next</div>
+                <div class="nav">
+                    <ul>
+                        <li><i class="ri-arrow-up-line"></i></li>
+                        <li><i class="ri-arrow-down-line"></i></li>
+                    </ul>
+                    <div class="bottomimg"></div>
+                </div>
+            </div>
+
+
+
+
+
+        
+
+        
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script>  
+    
+
+
+    <script>
+        
+            TweenMax.to(".bg",2,{
+    width:"100%",
+    ease:expo.easeinOut
+});
+
+TweenMax.form(".navbar",1.5,{
+    delay:2.5,
+    opacity:0,
+    y:20,
+    ease:expo.easeinOut
+});
+
+TweenMax.staggerFrom(".media ul li",1.5,{
+    delay:2.8,
+    opacity:0,
+    x:30,
+    ease:Expo.easeinOut
+},0.08);
+
+TweenMax.staggerFrom(".desc ul li",1.5,{
+    delay:2,
+    opacity:0,
+    y:20,
+    ease:Expo.easeinOut
+},0.1);
+
+TweenMax.staggerFrom(".desc p",1.5,{
+    delay:2.3,
+    opacity:0,
+    y:20,
+    ease:Expo.easeinOut
+})
+        </script>
+    </script>
+   
+    </script>
+       
+    </body>
+
+</html>
